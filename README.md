@@ -13,7 +13,7 @@ According to [ELT best practices with Airflow](https://gtoonstra.github.io/etl-w
 
 In order to merging branches, Git has support for [Octupus merge mode](http://www.freblogg.com/2016/12/git-octopus-merge.html), which is not sufficient enough in case of merge failures or if there is need for more configurations: which branches should be included, or excluded. Thus, a developer at Atlassian has written up a nice article and a tool [here](https://developer.atlassian.com/blog/2015/01/git-merge-distinct-octopus-merge/)
 
-This project is an exercise to study what features (needs) that such tool should have.
+This project is an exercise to study what features (needs) that such tool should have. In other words, it is a protoype, proof of concepts, as a mean of decision making.
 
 # TODOs
 - [ ] Add instructions on how to use
