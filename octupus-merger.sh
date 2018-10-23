@@ -8,9 +8,7 @@ read_including_branches() {
     for line in $(cat octupus.config); do
         READ_BRANCHES="$line,$READ_BRANCHES"
     done
-    echo "Before array: " "$READ_BRANCHES"
-    INCLUDING_BRANCHES=$READ_BRANCHES
-    echo $INCLUDING_BRANCHES
+    echo $READ_BRANCHES
 }
 
 merge_branches() { 
@@ -20,12 +18,11 @@ merge_branches() {
         for included_branch in $INCLUDING_BRANCHES; do
             #echo "Full:" $full_branch " Short: " $short_branch " Included: " $included_branch
             if [[ $included_branch == *$short_branch* ]]; then
-                #echo "Hit"
                 LIST_BRANCHES="$LIST_BRANCHES  $full_branch"
             fi
         done
     done
-    echo $LIST_BRANCHES
+    echo "List branches to be merged: " $LIST_BRANCHES
 
     # Octupus merge = kinda of cool :D
     git merge $LIST_BRANCHES -m 'octupus commit'

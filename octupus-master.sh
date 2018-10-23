@@ -90,9 +90,3 @@ octupus_merge
 REV_FOLDER=$(find $PWD -type d -iname "rev*" -maxdepth 1) && echo $REV_FOLDER
 ln -snf $PWD/$REPO_FOLDER/dev/sample-branch $REV_FOLDER/dev/
 exit 0
-
-
-#ln -snf /tmp/octupus/data-airflow-dags/dev/* /airflow/dags/data/dev/
-#ln -sn /tmp/octupus/data-airflow-dags/dev/* /airflow/dags/rev-1544cf91240a254d7047879972a3cc835f4b207c/dev/
-#ln -sn /tmp/octupus/octupus-dags/dev/* /airflow/dags/rev-1544cf91240a254d7047879972a3cc835f4b207c/dev/
-#ln -sn /airflow/dags/octupus-dags/dev/* /airflow/dags/rev-1544cf91240a254d7047879972a3cc835f4b207c/dev/
