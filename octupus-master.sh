@@ -4,8 +4,8 @@ Merge all branches using Octupus merge mode
 #!/bin/sh
 
 SSH_PRIVATE_KEY=/etc/git-secret/ssh
-OCTUPUS_FOLDER=scripts
-OCTUPUS_GIT=git@github.com:Thanh-Truong/scripts.git
+OCTUPUS_FOLDER=octupus-merger
+OCTUPUS_GIT=git@github.com:Thanh-Truong/octupus-merger.git
 OCTUPUS_SH=octupus-merger.sh
 OCTUPUS_CONFIG=octupus.config
 REPO_FOLDER=octupus-dags
