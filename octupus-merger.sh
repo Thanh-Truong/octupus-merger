@@ -4,11 +4,11 @@ Merge all branches using Octupus merge mode
 #!/bin/sh
 
 read_including_branches() {
-    READ_BRANCHES=""
+    INCLUDING_BRANCHES=""
     for line in $(cat octupus.config); do
-        READ_BRANCHES="$line,$READ_BRANCHES"
+        INCLUDING_BRANCHES="$line,$INCLUDING_BRANCHES"
     done
-    echo $READ_BRANCHES
+    echo $INCLUDING_BRANCHES
 }
 
 merge_branches() { 
@@ -16,7 +16,7 @@ merge_branches() {
     for full_branch in `git for-each-ref --sort='-committerdate' --format='%(refname)' refs/remotes/origin`;do
         short_branch=${full_branch:20:${#full_branch}}
         for included_branch in $INCLUDING_BRANCHES; do
-            #echo "Full:" $full_branch " Short: " $short_branch " Included: " $included_branch
+            echo "Full:" $full_branch " Short: " $short_branch " Included: " $included_branch
             if [[ $included_branch == *$short_branch* ]]; then
                 LIST_BRANCHES="$LIST_BRANCHES  $full_branch"
             fi
