@@ -88,6 +88,7 @@ pull_octupus
 pull_repo
 octupus_merge
 REV_FOLDER=$(find $PWD -type d -iname "rev*" -maxdepth 1) && echo $REV_FOLDER
-ln -snf $PWD/$REPO_FOLDER/dev/sample-branch $REV_FOLDER/dev/
-ln -snf $PWD/$REPO_FOLDER/dev/vimond-cloud-extra-assets-data $REV_FOLDER/dev/
+for included_branch in $(cat $PWD/$REPO_FOLDER/octupus.config); do
+    ln -snf $PWD/$REPO_FOLDER/dev/$included_branch $REV_FOLDER/dev/
+done
 exit 0

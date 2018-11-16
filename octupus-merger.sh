@@ -15,8 +15,8 @@ merge_branches() {
     LIST_BRANCHES=''
     for full_branch in `git for-each-ref --sort='-committerdate' --format='%(refname)' refs/remotes/origin`;do
         short_branch=${full_branch:20:${#full_branch}}
-        for included_branch in $INCLUDING_BRANCHES; do
-            echo "Full:" $full_branch " Short: " $short_branch " Included: " $included_branch
+        for included_branch in $(cat octupus.config); do
+            #echo "Full:" $full_branch " Short: " $short_branch " Included: " $included_branch
             if [[ $included_branch == *$short_branch* ]]; then
                 LIST_BRANCHES="$LIST_BRANCHES  $full_branch"
             fi
