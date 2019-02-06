@@ -91,4 +91,5 @@ REV_FOLDER=$(find $PWD -type d -iname "rev*" -maxdepth 1) && echo $REV_FOLDER
 for included_branch in $(cat $PWD/$REPO_FOLDER/octupus.config); do
     ln -snf $PWD/$REPO_FOLDER/dev/$included_branch $REV_FOLDER/dev/
 done
+ln -snf $PWD/$REPO_FOLDER/dev/variables.json $REV_FOLDER/dev/variables.json
 exit 0
