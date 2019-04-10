@@ -21,7 +21,8 @@ make_temp_folder() {
 setup_git() {
     echo "Setting Git.................."
     eval "$(ssh-agent -s)"
-    ssh-add $SSH_PRIVATE_KEY 
+    ssh-add $SSH_PRIVATE_KEY
+    ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 }
 
 clone_repo() {
